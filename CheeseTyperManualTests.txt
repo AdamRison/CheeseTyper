@@ -10,7 +10,7 @@ Preconditions: Open the Command Prompt and navigate to the directory containing 
 	supplementary files have been compiled.
 Input Values: None
 ExecutionSteps:
-	1.	Enter “javac CheeseTyper.java“ in the Command Prompt.
+	1.	Enter â€œjavac CheeseTyper.javaâ€œ in the Command Prompt.
 	2.	Run "java CheeseTyper" in the command Prompt.
 	3.	Wait approximately 60 seconds.
 Output Values:
@@ -20,7 +20,7 @@ Output Values:
 
 	postel"
 
-	postel is nondeterministic and will change with each execution of the program.
+	postel is a nondeterministic String and will change with each execution of the program.
 
 Postconditions:
 	The program is still running even after waiting 60 seconds.
@@ -38,7 +38,7 @@ Preconditions: Open the Command Prompt and navigate to the directory containing 
 	supplementary files have been compiled.
 Input Values: "This is definitely not a cheese."
 ExecutionSteps:
-	1.	Enter “javac CheeseTyper.java“ in the Command Prompt.
+	1.	Enter â€œjavac CheeseTyper.javaâ€œ in the Command Prompt.
 	2.	Run "java CheeseTyper" in the command Prompt.
 	3.	When the program starts enter the String "This is definitely not a cheese."
 Output Values:
