@@ -1,0 +1,80 @@
+*CheeseTyper Manual Tests
+*By Adam Rison
+
+
+Identifier: MainLoopTimerQuitTest
+Test Case: Verify that the program ends after running for roughly 60 seconds.
+Preconditions: Open the Command Prompt and navigate to the directory containing "CheeseTyper.java."
+	Also, ensure that the computer you are using has the most recent version of the JDK
+	installed and that the JDK's "bin" directory is included in the Path.  Make sure any other
+	supplementary files have been compiled.
+Input Values: None
+ExecutionSteps:
+	1.	Enter “javac CheeseTyper.java“ in the Command Prompt.
+	2.	Run "java CheeseTyper" in the command Prompt.
+	3.	Wait approximately 60 seconds.
+Output Values:
+	The Command Prompt prints the following:
+
+	"You have 60 seconds to enter as many cheeses as you see appear on screen! Go! 
+
+	postel"
+
+	postel is nondeterministic and will change with each execution of the program.
+
+Postconditions:
+	The program is still running even after waiting 60 seconds.
+
+Status: Failed
+
+
+
+
+Identifier: MainLoopIncorrectAnswerTest
+Test Case: Verify that the program ends after entering an incorrect String.
+Preconditions: Open the Command Prompt and navigate to the directory containing "CheeseTyper.java."
+	Also, ensure that the computer you are using has the most recent version of the JDK
+	installed and that the JDK's "bin" directory is included in the Path.  Make sure any other
+	supplementary files have been compiled.
+Input Values: "This is definitely not a cheese."
+ExecutionSteps:
+	1.	Enter “javac CheeseTyper.java“ in the Command Prompt.
+	2.	Run "java CheeseTyper" in the command Prompt.
+	3.	When the program starts enter the String "This is definitely not a cheese."
+Output Values:
+	The Command Prompt prints the following:
+
+	"You have 60 seconds to enter as many cheeses as you see appear on screen! Go! 
+
+	menonita
+	This is definitely not a cheese.
+	That's incorrect! Game over!
+	Your score is 0"
+
+Postconditions:
+	The program exited with error and the Command Prompt is waiting for a command.
+
+Status: Passed
+
+
+
+Indentifier: MainLoopCorrectAnswerTest
+Test Case: Verify that upon entering the same String that appears in the command prompt,
+	the program will display a new String for the user to enter.
+Preconditions: Open the Command Prompt and navigate to the directory containing "CheeseTyper.java."
+	Also, ensure that the computer you are using has the most recent version of the JDK
+	installed and that the JDK's "bin" directory is included in the Path.  Make sure any other
+	supplementary files have been compiled.
+Input Values:  Enter the String that appears after the message "You have 60 seconds to enter as 
+	many cheeses as you see appear on screen! Go!"
+Output Values:
+	The Command Prompt prints the following:
+	"You have 60 seconds to enter as many cheeses as you see appear on screen! Go! 
+
+	swaledale
+	swaledale
+	coverdale"
+
+Postconditions:
+	The program is still running and waiting for another input value from the user.
+Status: Passed
