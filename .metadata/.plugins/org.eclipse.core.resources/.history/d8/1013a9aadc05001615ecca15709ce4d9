@@ -1,0 +1,64 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TapperTyperTests {
+	
+	@Test
+	public void EndGameTest(){
+		fail();
+	}
+	
+	//Tests that all scores were combined appropriately
+	@Test
+	public void TallyPointsTest(){
+		fail();
+	}
+	
+	//Tests that the proper score for a standard word appeared
+	@Test
+	public void CalculateBaseWordScoreTest1(){
+		assertEquals(TapperTyper.CalculateBaseWordScore("fox"), 3);
+	}
+	
+	@Test
+	public void CalculateBaseWordScoreTest2(){
+		assertEquals(TapperTyper.CalculateBaseWordScore("superfluous"), 14);
+	}
+	
+	@Test
+	public void CalculateBaseWordScoreTest3(){
+		assertEquals(TapperTyper.CalculateBaseWordScore(""), 0);
+	}
+	
+	@Test
+	public void CalculateBaseWordScoreTest4(){
+		assertEquals(TapperTyper.CalculateBaseWordScore(null), 0);
+	}
+	
+	@Test
+	public void CalculateBaseWordScore5(){
+		assertEquals(TapperTyper.CalculateBaseWordScore("Pneumonoultramicroscopicsilicovolcanoconiosis"), 
+				("Pneumonoultramicroscopicsilicovolcanoconiosis".length()+7));
+	}
+	
+	@Test
+	public void BonusPointCalculatorTest(){
+		fail();
+	}
+
+	@Test
+	public void ErrorDetectionTest(){
+		fail();
+	}
+	
+	@Test
+	public void TimeCounterTest(){
+		fail();
+	}
+	
+	@Test
+	public void DictionaryInputTest(){
+		fail();
+	}
+}

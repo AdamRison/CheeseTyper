@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class TapperTyper {
+	
+	Scanner keyboard = new Scanner (System.in);
+
+	public static void main (String args[]){
+		
+	}
+	
+	/**
+	 * Calculates base word score based on the number of letters the word contains.  The more letters
+	 * a word contains, the more points it is worth.
+	 * @param word - Word whose score is desired
+	 * @return - int value that represents the word's score
+	 */
+	public static int CalculateBaseWordScore(String word){
+		int wordScore = word.length();
+		if(wordScore>20){
+			wordScore+=7;
+		}
+		else if(wordScore>15){
+			wordScore+=5;
+		}
+		else if(wordScore>10){
+			wordScore+=3;
+		}
+		else if(wordScore>5){
+			wordScore++;
+		}
+		return wordScore;
+	}
+}

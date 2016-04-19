@@ -1,0 +1,149 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CheeseTyperTests {
+	
+	@Test
+	public void EndGameTest(){
+		fail();
+	}
+	
+	//Tests that all scores were combined appropriately
+	@Test
+	public void TallyPointsTest(){
+		fail();
+	}
+	
+	/**
+	*	Tests that CalculateBaseWordScore returns the word length as the score for words that are
+	*	under 5 characters in length.
+	*/
+	@Test
+	public void CalculateBaseWordScoreWithWordUnderFiveLettersTest(){
+		assertEquals(CheeseTyper.CalculateBaseWordScore("fox"), 3);
+	}
+	
+	/**
+	*	Tests that CalculateBaseWordScore returns the length of the word plus one when the size of the
+	*	word is 5 or greater but less than 10.  For this case, Burgos is 6 letters in length, so the method
+	*	should return 7.
+	*/
+	@Test public void CalculateBaseWordScoreWithWordMoreThanFiveLettersTest(){
+		assertEquals(CheeseTyper.CalculateBaseWordScore("Burgos"), 7);
+	}
+	
+	/**
+	 * Tests that CalculateBaseWordScore returns an int equal to the length of the word, plus 3 if
+	 * its length is between 10 and 14 characters.
+	 */
+	@Test
+	public void CalculateBaseWordScoreWithWordOverTenLettersTest(){
+		assertEquals(CheeseTyper.CalculateBaseWordScore("superfluous"), ("superfluous".length()+3));
+	}
+	
+	/**
+	 * Tests that CalculateBaseWordScore returns an int equal to the length of the word, plus 5 if
+	 * its length is between 15 and 19 characters.
+	 */
+	@Test
+	public void CalculateBaseWordScoreWithWordFifteenLettersTest(){
+		assertEquals(CheeseTyper.CalculateBaseWordScore("MoreThanFifteenChar"), 24);
+	}
+	
+	/**
+	 * Tests that CalculateBaseWordScore returns the int 0 when given an empty String.
+	 */
+	@Test
+	public void CalculateBaseWordScoreEmptyStringTest(){
+		assertEquals(CheeseTyper.CalculateBaseWordScore(""), 0);
+	}
+	
+	/**
+	 * Tests that CalculateBaseWordScore returns the int 0 when given a null String.
+	 * Previously did not check for this case and it caused a problem.
+	 */
+	@Test
+	public void CalculateBaseWordScoreNullStringTest(){
+		assertEquals(CheeseTyper.CalculateBaseWordScore(null), 0);
+	}
+	
+	@Test
+	public void CalculateBaseWordScoreVeryLongStringTest(){
+		assertEquals(CheeseTyper.CalculateBaseWordScore("Pneumonoultramicroscopicsilicovolcanoconiosis"), 
+				("Pneumonoultramicroscopicsilicovolcanoconiosis".length()+7));
+	}
+	
+	@Test
+	public void BonusPointCalculatorTest(){
+		fail();
+	}
+
+	@Test
+	public void ErrorDetectionTest(){
+		fail();
+	}
+	
+	@Test
+	public void TimeCounterTest(){
+		fail();
+	}
+	
+	
+	/**
+	 * Tests that RandomlySelectString does not return the same String each time it is called.
+	 * This is a nondeterministic test, so there is a chance that it will fail.  However, as long
+	 * as it passes roughly 653 out of 654 trials, this test passes.
+	 */
+	@Test
+	public void RandomlySelectStringTest(){
+		assertNotEquals(CheeseTyper.RandomlySelectString(), CheeseTyper.RandomlySelectString());
+	}
+	
+	/**
+	 * Tests that CalculateLetterBonusPoints will return an integer greater than 0 when given
+	 * a String that contains multiple bonus point letters. 
+	 */
+	@Test
+	public void CalculateLetterBonusPointsWithBonusPointLettersTest(){
+		assertTrue(CheeseTyper.CalculateLetterBonusPoints("Queso Blanco con Frutas --Pina y Mango")>0);
+	}
+	
+	/**
+	 * Tests that CalculateLetterBonusPoints will return 0 if it receives an empty String.
+	 */
+	@Test
+	public void CalculateLetterBonusPointsWithEmptyStringTest(){
+		assertEquals(CheeseTyper.CalculateLetterBonusPoints(""),0);
+	}
+	
+	/**
+	 * Tests that CalculateLetterBonusPoints will return 0 if it receives a null String.
+	 */
+	@Test
+	public void CalculateLetterBonusPointsWithNullStringTest(){
+		assertTrue(CheeseTyper.CalculateLetterBonusPoints(null)==0);
+	}
+	
+	/**
+	 * Tests that CalculateLetterBonusPoints will return 0 if it receives a String that does
+	 * not contain any of the bonus letters.
+	 */
+	@Test
+	public void CalculateLetterBonusPointsWithoutBonusPointLettersTest(){
+		assertTrue(CheeseTyper.CalculateLetterBonusPoints("Sottocenare al Tartufo")==0);
+	}
+	
+	/**
+	 * Tests that CheckEqualityOfWords works as case insensitive
+	 */
+	@Test
+	public void CheckEqualityOfWordsWithVaryingUpperAndLowerCasesTest(){
+		assertTrue(CheeseTyper.CheckEqualityOfWords("cHeDdeR", "chedder"));
+	}
+	
+	@Test
+	public void CalculateTotalScore(){
+		fail();
+	}
+}

@@ -1,0 +1,74 @@
+import java.io.*;
+import java.util.*;
+
+public class CheeseTyper {
+	
+	static Scanner keyboard = new Scanner (System.in);
+
+	public static void main (String args[]){
+		
+	}
+	
+	
+	public static String RandomlySelectString(){
+		String resultString;
+		Random rand = new Random();
+		resultString = Cheeses.CheeseStrings[rand.nextInt(Cheeses.CheeseStrings.length-1)];
+		return resultString;
+	}
+	
+	
+	
+	/**
+	 * Calculates base word score based on the number of letters the word contains.  The more letters
+	 * a word contains, the more points it is worth.
+	 * @param word - Word whose score is desired
+	 * @return - int value that represents the word's score
+	 */
+	public static int CalculateBaseWordScore(String word){
+		int wordScore = 0;
+		if(word!=null){
+			wordScore = word.length();
+			if(wordScore>20){
+				wordScore+=7;
+			}
+			else if(wordScore>15){
+				wordScore+=5;
+			}
+			else if(wordScore>10){
+				wordScore+=3;
+			}
+			else if(wordScore>5){
+				wordScore++;
+			}
+		}
+		return wordScore;
+	}
+	
+	/**
+	 * Method checks that two Strings are equal.  Used to check that the dictionary word and the 
+	 * String that the user entered are equal to each other.
+	 * @param dictionaryWord - String presented to the user to type back
+	 * @param enteredString - String that the user entered
+	 * @return - Boolean: True if the Strings are equal; false if the Strings are not equal
+	 */
+	private static boolean CheckEqualityOfWords(String dictionaryWord, String enteredString){
+		boolean returnValue = false;
+		if(dictionaryWord.equals(enteredString)){
+			returnValue = true;
+		}
+		return returnValue;
+	}
+	
+	/**
+	 * Method gets String input from user via Scanner from keyboard entry
+	 * @return String that the user entered
+	 */
+	private static String getInputValue(){
+		String enteredString = "";
+		if(keyboard!=null){
+			enteredString = keyboard.next();
+		}
+		return enteredString;
+	}
+}

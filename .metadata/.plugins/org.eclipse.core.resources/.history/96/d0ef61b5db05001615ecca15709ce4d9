@@ -1,0 +1,41 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TapperTyperTests {
+	
+	@Test
+	public void EndGameTest(){
+		fail();
+	}
+	
+	@Test
+	public void TallyPointsTest(){
+		fail();
+	}
+	
+	@Test
+	public void WordScoreCalculatorTest(){
+		
+	}
+	
+	@Test
+	public void BonusPointCalculatorTest(){
+		fail();
+	}
+
+	@Test
+	public void ErrorDetectionTest(){
+		fail();
+	}
+	
+	@Test
+	public void TimeCounterTest(){
+		fail();
+	}
+	
+	@Test
+	public void DictionaryInputTest(){
+		fail();
+	}
+}

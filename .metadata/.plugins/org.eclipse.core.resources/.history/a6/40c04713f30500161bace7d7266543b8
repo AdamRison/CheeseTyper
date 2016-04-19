@@ -1,0 +1,138 @@
+import java.io.*;
+import java.util.*;
+
+public class CheeseTyper {
+	
+	static Scanner keyboard = new Scanner (System.in);
+	private static String currentCheese;
+	private static int currentScore = 0;
+	private static ArrayList<String> correctlyTypedStrings = new ArrayList<String>();
+
+	public static void main (String args[]){
+		int resultStatusString = 1;
+		UpdateCheeseDisplayedForUser();
+		int gameSessionTime = 60000;
+		long startTime = System.currentTimeMillis();
+		boolean outOfTime = false;
+		
+		while(!outOfTime){
+			if((System.currentTimeMillis() - startTime) >= gameSessionTime){
+				outOfTime = true;
+			}
+			else{
+				if(keyboard.hasNext()){
+					outOfTime = !CheckEqualityOfWords(keyboard.nextLine(), currentCheese);
+					if(!outOfTime){
+						UpdateCheeseDisplayedForUser();
+					}else{
+						resultStatusString = 2;
+					}
+					System.out.println(outOfTime);
+				}
+			}
+		}
+		System.out.println(GetGameStatusMessage(resultStatusString));
+	}
+	
+	public static String GetGameStatusMessage(int statusCode){
+		String gameStatusMessage;
+		if(statusCode == 1){
+			gameStatusMessage = "Time's up!";
+		}
+		else if(statusCode == 2){
+			gameStatusMessage = "That's incorrect! Game over!";
+		}
+		else{
+			gameStatusMessage = "Enter \"s\" to start!";
+		}
+		return gameStatusMessage;
+	}
+	
+	/**
+	 * Adds up the number of bonus points obtained from typing Strings with the letters 'b,' 'm,' 'p,'
+	 * 'q,' and 'z,' which are supposedly some of the hardest characters to type in rapid succession.
+	 * @param cheeseString - String to be checked for bonus point characters
+	 * @return - integer value for the number of bonus points
+	 */
+	
+	public static int CalculateLetterBonusPoints(String cheeseString){
+		int bonusPoints = 0;
+		if(cheeseString!=null){
+			bonusPoints += cheeseString.length() - cheeseString.toLowerCase().replace("q", "").length();
+			bonusPoints += cheeseString.length() - cheeseString.toLowerCase().replace("z", "").length();
+			bonusPoints += cheeseString.length() - cheeseString.toLowerCase().replace("p", "").length();
+			bonusPoints += cheeseString.length() - cheeseString.toLowerCase().replace("m", "").length();
+			bonusPoints += cheeseString.length() - cheeseString.toLowerCase().replace("b", "").length();
+		}
+		return bonusPoints;
+	}
+	
+	
+	/**
+	 * Calculates base word score based on the number of letters the word contains.  The more letters
+	 * a word contains, the more points it is worth.
+	 * @param word - Word whose score is desired
+	 * @return - int value that represents the word's score
+	 */
+	public static int CalculateBaseWordScore(String word){
+		int wordScore = 0;
+		if(word!=null){
+			wordScore = word.length();
+			if(wordScore>20){
+				wordScore+=7;
+			}
+			else if(wordScore>15){
+				wordScore+=5;
+			}
+			else if(wordScore>10){
+				wordScore+=3;
+			}
+			else if(wordScore>5){
+				wordScore++;
+			}
+		}
+		return wordScore;
+	}
+	
+	/**
+	 * Checks that two Strings are equal.  Used to check that the cheeseString and the 
+	 * String that the user entered are equal to each other.  If they are correct, the cheeseString is 
+	 * added to the ArrayList of correctlyTypedStrings and a new cheese is randomly selected
+	 * @param cheeseString - String presented to the user to type back
+	 * @param enteredString - String that the user entered
+	 * @return - Boolean: True if the Strings are equal; false if the Strings are not equal
+	 */
+	public static boolean CheckEqualityOfWords(String cheeseString, String enteredString){
+		boolean returnValue = false;
+		if(cheeseString.equals(enteredString)){
+			returnValue = true;
+			correctlyTypedStrings.add(cheeseString);
+		}
+		return returnValue;
+	}
+	
+	/**
+	 * Randomly returns a Cheese String (not to be confused with String cheese).
+	 * @return Randomly selected String from Cheeses String array
+	 */
+	public static String RandomlySelectString(){
+		String resultString;
+		Random rand = new Random();
+		resultString = Cheeses.CheeseStrings[rand.nextInt(Cheeses.CheeseStrings.length-1)];
+		return resultString.toLowerCase();
+	}
+	
+	
+	private static void UpdateCheeseDisplayedForUser(){
+		currentCheese = RandomlySelectString();
+		System.out.println(currentCheese);
+	}
+	
+	/**
+	 * Adds an integer value to the user's current score
+	 * @param addedPoints - Number of points to add to the user's current score
+	 */
+	private static void UpdateScore(int addedPoints){
+		currentScore+=addedPoints;
+	}
+}
