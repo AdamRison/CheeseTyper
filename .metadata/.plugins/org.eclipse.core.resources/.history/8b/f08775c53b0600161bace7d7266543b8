@@ -1,7 +1,6 @@
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -149,7 +148,7 @@ public class CheeseTyperTests {
 	 */
 	@Test
 	public void CheckEqualityOfWordsWithSapcesTest(){
-		assertTrue(CheeseTyper.CheckEqualityOfWords("cheddar cheese", "cheddar cheese"));
+		assertTrue(CheeseTyper.CheckEqualityOfWords("cheddar cheese", "chedder cheese"));
 		assertFalse(CheeseTyper.CheckEqualityOfWords("cheddarcheese", "cheddar cheese"));
 	}
 	
@@ -215,17 +214,6 @@ public class CheeseTyperTests {
 	}
 	
 	/**
-	 * Tests an example array of Cheese Strings taken from Cheeses.java.  I calculated the score by
-	 * hand prior to this test to see if the math would work out correctly.  This test takes into account
-	 * size, size bonus, and bonus letters scores.
-	 */
-	@Test
-	public void CalculateTotalScoreWithExampleArray(){
-		ArrayList<String> cheeses = new ArrayList<String>(Arrays.asList("brie de meaux", "royalp tilsit",
-		                                                                 "garrotxa", "pont l'eveque"));
-		assertEquals(CheeseTyper.CalculateTotalScore(cheeses), 62);
-	}
-	/**
 	 * Tests the the proper String is returned when GetGameStatusMessage receives the Time's Up code (1).
 	 * This test is mainly here for code coverage.
 	 */
@@ -280,5 +268,4 @@ public class CheeseTyperTests {
 	public void GetEndGameStatusNothingHappenedYetTest(){
 		assertEquals(CheeseTyper.GetEndGameStatus(false, false), 1);
 	}
-	
 }

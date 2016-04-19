@@ -1,7 +1,6 @@
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -143,17 +142,6 @@ public class CheeseTyperTests {
 	}
 	
 	/**
-	 * Tests that CheckEqualityOfWords accounts for white space so that a String that includes
-	 * white space is not treated equal to a String that contains all the same characters, except
-	 * for the white space 
-	 */
-	@Test
-	public void CheckEqualityOfWordsWithSapcesTest(){
-		assertTrue(CheeseTyper.CheckEqualityOfWords("cheddar cheese", "cheddar cheese"));
-		assertFalse(CheeseTyper.CheckEqualityOfWords("cheddarcheese", "cheddar cheese"));
-	}
-	
-	/**
 	 * Tests that CalculateTotalScore accurately calculates the score for an ArrayList that
 	 * contains one six letter String that contains no bonus letters.  I discovered that I cannot
 	 * use Mockito with static methods.  I also learned that to get around this problem, I would
@@ -215,17 +203,6 @@ public class CheeseTyperTests {
 	}
 	
 	/**
-	 * Tests an example array of Cheese Strings taken from Cheeses.java.  I calculated the score by
-	 * hand prior to this test to see if the math would work out correctly.  This test takes into account
-	 * size, size bonus, and bonus letters scores.
-	 */
-	@Test
-	public void CalculateTotalScoreWithExampleArray(){
-		ArrayList<String> cheeses = new ArrayList<String>(Arrays.asList("brie de meaux", "royalp tilsit",
-		                                                                 "garrotxa", "pont l'eveque"));
-		assertEquals(CheeseTyper.CalculateTotalScore(cheeses), 62);
-	}
-	/**
 	 * Tests the the proper String is returned when GetGameStatusMessage receives the Time's Up code (1).
 	 * This test is mainly here for code coverage.
 	 */
@@ -280,5 +257,4 @@ public class CheeseTyperTests {
 	public void GetEndGameStatusNothingHappenedYetTest(){
 		assertEquals(CheeseTyper.GetEndGameStatus(false, false), 1);
 	}
-	
 }

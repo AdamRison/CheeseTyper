@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CheeseTyperTests" project="CheeseTyper" tests="26" started="26" failures="0" errors="0" ignored="0">
+  <testsuite name="CheeseTyperTests" time="0.021">
+    <testcase name="CalculateBaseWordScoreWithWordFifteenLettersTest" classname="CheeseTyperTests" time="0.014"/>
+    <testcase name="CalculateLetterBonusPointsWithoutBonusPointLettersTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateTotalScoreWithOneItemWithBonusPoints" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateBaseWordScoreEmptyStringTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CheckEqualityOfWordsWhenWordsAreEqual" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateTotalScoreMultipleConditions" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="GetGameStatusMessageTimeRanOutTest" classname="CheeseTyperTests" time="0.001"/>
+    <testcase name="CalculateLetterBonusPointsWithBonusPointLettersTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="GetEndGameStatusTimeIsUpTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="GetGameStatusMessageErrorCaseTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateBaseWordScoreWithWordUnderFiveLettersTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateLetterBonusPointsWithNullStringTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="GetGameStatusMessageIncorrectAnswerTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateBaseWordScoreWithWordOverTenLettersTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateBaseWordScoreWithWordMoreThanFiveLettersTest" classname="CheeseTyperTests" time="0.001"/>
+    <testcase name="RandomlySelectStringTest" classname="CheeseTyperTests" time="0.004"/>
+    <testcase name="CheckEqualityOfWordsWhenWordsAreNotEqual" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateBaseWordScoreVeryLongStringTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateTotalScoreWithOneItemTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="GetEndGameStatusIncorrectAnswerTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateLetterBonusPointsWithEmptyStringTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateBaseWordScoreNullStringTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateTotalScoreWithMultipleArrayItems" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="GetEndGameStatusNothingHappenedYetTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CheckEqualityOfWordsWithVaryingUpperAndLowerCasesTest" classname="CheeseTyperTests" time="0.0"/>
+    <testcase name="CalculateTotalScoreWithNullArray" classname="CheeseTyperTests" time="0.001"/>
+  </testsuite>
+</testrun>

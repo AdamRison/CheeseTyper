@@ -214,11 +214,6 @@ public class CheeseTyperTests {
 		assertEquals(CheeseTyper.CalculateTotalScore(cheeses), 0);
 	}
 	
-	/**
-	 * Tests an example array of Cheese Strings taken from Cheeses.java.  I calculated the score by
-	 * hand prior to this test to see if the math would work out correctly.  This test takes into account
-	 * size, size bonus, and bonus letters scores.
-	 */
 	@Test
 	public void CalculateTotalScoreWithExampleArray(){
 		ArrayList<String> cheeses = new ArrayList<String>(Arrays.asList("brie de meaux", "royalp tilsit",
